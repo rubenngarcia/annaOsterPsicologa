@@ -1,0 +1,551 @@
+:root {
+  --primary-color: #a4886d;
+  --accent-color: white;
+  --text-color: #3d2d1f;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  cursor: url('../assets/img/mariposa_oscura_sinfondo_32x32_flip.png') 16 16, auto;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  
+}
+
+header {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo-img {
+  height: 80px;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color:rgb(201, 158, 51);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
+.lang-flags {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.flag {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.flag:hover {
+  transform: scale(1.2);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  text-align: center;
+  
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+ 
+}
+.italic {
+  font-style: italic;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+ 
+  font-variation-settings:"wdth" 100;
+  align-items: center;
+  text-align: center;
+}
+.terapia{
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+}
+
+.btn {
+  width: 200px;
+  margin: 0 auto;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+
+  transition: background-color 0.3s;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+}
+
+.btn:hover {
+  background-color: #a68e74;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: var(--font-family);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+/* MARIPOSAS DECORATIVAS */
+.mariposa {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  opacity: 0.7;
+  animation: flotar 6s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mariposa1 {
+  top: 5%;
+  left: 10%;
+  transform: rotate(-10deg);
+  animation-delay: 0s;
+}
+
+.mariposa2 {
+  top: 20%;
+  right: 5%;
+  transform: rotate(12deg);
+  animation-delay: 1s;
+}
+
+.mariposa3 {
+  bottom: 20%;
+  left: 5%;
+  transform: scale(1.1) rotate(-15deg);
+  animation-delay: 2s;
+}
+
+.mariposa4 {
+  bottom: 10%;
+  right: 8%;
+  transform: rotate(20deg);
+  animation-delay: 3s;
+}
+
+.mariposa5 {
+  top: 50%;
+  left: 45%;
+  transform: rotate(5deg);
+  animation-delay: 4s;
+}
+
+.mariposa6 {
+  bottom: 30%;
+  right: 30%;
+  transform: rotate(-12deg) scale(1.2);
+  animation-delay: 5s;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+
+
+/* SOBRE MI */
+#sobremi .sobremi-contenido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+#sobremi .sobremi-imagen {
+  flex: 1;
+  max-width: 400px;
+
+}
+
+#sobremi .sobremi-imagen img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 100px;
+}
+
+#sobremi .sobremi-texto {
+  flex: 2;
+  display: block;
+  padding: 20px 0;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+}
+
+
+#sobremi .toggle-btn {
+  display: none;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#servicios .servicios-contenido {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  
+}
+
+#servicios .servicios-texto {
+  flex: 1;
+  min-width: 300px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+  
+}
+
+#servicios .servicios-lista {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+  margin: 0 40px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+}
+
+#servicios .servicios-lista-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+#servicios .servicios-lista-item img {
+  width: 20px;
+  height: 20px;
+}
+
+#servicios .tarjetas-terapia {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 300px;
+  height: 450px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0px 50px;
+}
+
+.tarjeta-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.tarjeta.activo .tarjeta-inner,
+.tarjeta:hover .tarjeta-inner {
+  transform: rotateY(180deg);
+}
+
+.tarjeta-front,
+.tarjeta-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.tarjeta-front {
+  background-size: cover;
+  background-position: center;
+}
+
+.tarjeta-back {
+  background-color: var(--primary-color);
+  transform: rotateY(180deg);
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style:normal;
+}
+.btn #form_enviar{
+
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* TITULARES */
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  /* MARIPOSAS */
+  .mariposa {
+    width: 45px;
+    height: 45px;
+    opacity: 0.6;
+    animation-duration: 8s;
+  }
+
+  /* SECCIÓN SOBRE MÍ */
+  #sobremi {
+    text-align: center;
+  }
+
+  #sobremi .sobremi-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sobremi h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  #sobremi .toggle-btn {
+    display: inline-block;
+    margin: 0 auto 1rem auto;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  #sobremi .sobremi-texto {
+    display: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #sobremi .sobremi-texto.activo {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  #sobremi .sobremi-imagen img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* SECCIÓN SERVICIOS */
+  #servicios .servicios-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #servicios .servicios-texto,
+  #servicios .servicios-lista {
+    width: 100%;
+  }
+
+  .tarjeta {
+    width: 95%;
+    height: 350px;
+    margin: 1rem 0;
+  }
+
+  #servicios .tarjetas-terapia {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* SECCIÓN TERAPIA */
+  #terapia h2,
+  #terapia p {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  #terapia h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  #terapia p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* OCULTAR MARIPOSAS EN PANTALLAS MUY PEQUEÑAS */
+@media (max-width: 480px) {
+  .mariposa {
+    display: none;
+  }
+}
